@@ -1,3 +1,6 @@
 *.xml
 *.pdf
 *.ipynb_checkpoints
+build/
+bin/
+*.json
