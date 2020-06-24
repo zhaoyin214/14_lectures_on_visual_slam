@@ -98,7 +98,7 @@ int main(int argc, char const *argv[])
     }
     point_cloud->is_dense = false;
     cout << "点云共有" << point_cloud->size() << "个点。" << endl;
-    pcl::io::savePCDFileBinary("map.pcb", *point_cloud);
+    pcl::io::savePCDFileBinary("map.pcd", *point_cloud);
 
     return 0;
 }
