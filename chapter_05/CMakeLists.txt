@@ -4,17 +4,23 @@ cmake_minimum_required( VERSION 2.8 )
 # 声明一个 cmake 工程
 project( Sophus )
 
-# 添加 c++ 11 标准支持
-set( CMAKE_CXX_FLAGS "-std=c++11" )
+# 添加 c++ 14 标准支持
+set( CMAKE_CXX_FLAGS "-std=c++14" )
 
-# OpenCV库
+# opencv
 find_package( OpenCV REQUIRED )
-# 添加头文件
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( image_basics image_basics.cpp )
-add_executable( join_map join_map.cpp )
+# eigen
+include_directories( "/usr/include/eigen3" )
 
-# 链接OpenCV库
+# pcl
+find_package( PCL REQUIRED COMPONENT common io )
+include_directories( ${PCL_INCLUDE_DIRS} )
+add_definitions( ${PCL_DEFINITIONS} )
+
+add_executable( image_basics image_basics.cpp )
 target_link_libraries( image_basics ${OpenCV_LIBS} )
-target_link_libraries( join_map ${OpenCV_LIBS} )
+
+add_executable( join_map join_map.cpp )
+target_link_libraries( join_map ${OpenCV_LIBS} ${PCL_LIBRARIES} )

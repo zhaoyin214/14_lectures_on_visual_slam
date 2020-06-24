@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     {
         // 数据不存在，可能是文件不存在
         cerr << "文件" << argv[1] << "不存在" << endl;
-        return 0;
+        return 1;
     }
 
     // 文件顺利读取，输出基本信息
@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
     {
         // 图像类型不符合要求
         cout << "请输入一张彩色图或灰度图" << endl;
-        return 0;
+        return 1;
     }
 
     // 遍历图像，请注意以下遍历方式亦可使用于随机访问
