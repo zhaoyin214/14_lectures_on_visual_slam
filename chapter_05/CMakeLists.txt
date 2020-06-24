@@ -13,5 +13,8 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 add_executable( image_basics image_basics.cpp )
+add_executable( join_map join_map.cpp )
+
 # 链接OpenCV库
 target_link_libraries( image_basics ${OpenCV_LIBS} )
+target_link_libraries( join_map ${OpenCV_LIBS} )
