@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
     }
 
     // 文件顺利读取，输出基本信息
-    cout << "图像宽为" << image.cols << ",高为" << image.rows << ",通道数为" << image.channels() << endl;
+    cout << "图像宽为" << image.cols << "，高为" << image.rows << "，通道数为" << image.channels() << endl;
     // `cv::imshow`显示图像
     cv::imshow("image", image);
     // 暂停程序，等待按键输入
