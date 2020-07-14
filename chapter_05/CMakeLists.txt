@@ -2,10 +2,11 @@
 cmake_minimum_required( VERSION 2.8 )
 
 # 声明一个 cmake 工程
-project( Sophus )
+project( ch05 )
 
 # 添加 c++ 14 标准支持
 set( CMAKE_CXX_FLAGS "-std=c++14" )
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread" )
 
 # opencv
 find_package( OpenCV REQUIRED )
